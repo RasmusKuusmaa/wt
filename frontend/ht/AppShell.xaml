@@ -14,6 +14,9 @@
     <ShellContent Route="RegisterPage"
                   ContentTemplate="{DataTemplate views:RegisterPage}"
                   />
-    <ShellContent Route="MainPage"
-                  ContentTemplate="{DataTemplate views:MainPage}"/>
+    <TabBar Route="MainPage">
+        <ShellContent Title="Workout" ContentTemplate="{DataTemplate views:WorkoutPage}"/>
+        <ShellContent Title="Nutrition" ContentTemplate="{DataTemplate views:NutritionPage}" />
+        <ShellContent Title="Stats" ContentTemplate="{DataTemplate views:StatsPage}"/>
+    </TabBar>
 </Shell>
