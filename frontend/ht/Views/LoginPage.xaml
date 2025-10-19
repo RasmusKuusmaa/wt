@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ht.Views.LoginPage"
+             Title="LoginPage"
+             xmlns:vm="clr-namespace:ht.ViewModels"
+             >
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <Label Text="Login"/>
+        <Label Text="email"/>
+        <Entry Placeholder="email" Text="{Binding Email}"
+               />
+
+        <Label Text="password"/>
+        <Entry IsPassword="True" Text="{Binding Password}"
+               />
+
+        <Button Text="Login" Command="{Binding LoginCommand}"/>
+        <Button Text="Regitser" Command="{Binding GoToRegisterCommand}"/>
+    </VerticalStackLayout>
+</ContentPage>
