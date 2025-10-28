@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm run dev:*)",
+      "Bash(timeout 5 bash:*)",
+      "Bash(cat:*)",
+      "Bash(timeout 3 bash:*)",
+      "Bash(npx kill-port:*)",
+      "Bash(curl:*)",
+      "Bash(mysql:*)",
+      "Bash(npx tsx:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
