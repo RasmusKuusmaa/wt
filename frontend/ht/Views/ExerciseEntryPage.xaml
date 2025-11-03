@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ht.Views.ExerciseEntryPage"
+             Title="{Binding ExerciseName}">
+    <Grid RowDefinitions="Auto,*,Auto" Padding="10">
+        <VerticalStackLayout Grid.Row="0" Spacing="10">
+            <Label Text="Enter Weight and Reps" FontSize="18" FontAttributes="Bold"/>
+
+            <Label Text="Workout Date"/>
+            <DatePicker Date="{Binding WorkoutDate}" Format="yyyy-MM-dd"/>
+
+            <Entry Placeholder="Weight (kg)"
+                   Text="{Binding Weight}"
+                   Keyboard="Numeric"/>
+
+            <Entry Placeholder="Reps"
+                   Text="{Binding Reps}"
+                   Keyboard="Numeric"/>
+
+            <Button Text="Add Set"
+                    Command="{Binding AddSetCommand}"
+                    BackgroundColor="#6200EE"
+                    TextColor="White"/>
+        </VerticalStackLayout>
+
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Sets}" Margin="0,10">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="0,5" Padding="10" BackgroundColor="#F5F5F5">
+                        <Label>
+                            <Label.Text>
+                                <MultiBinding StringFormat="Set {0}: {1}kg × {2} reps">
+                                    <Binding Path="set_number"/>
+                                    <Binding Path="weight"/>
+                                    <Binding Path="reps"/>
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Grid.Row="2"
+                Text="Save Workout"
+                Command="{Binding SaveWorkoutCommand}"
+                BackgroundColor="#03DAC6"
+                TextColor="Black"
+                Margin="0,10,0,0"/>
+    </Grid>
+</ContentPage>

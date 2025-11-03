@@ -14,6 +14,7 @@ export async function buildApp(): Promise<FastifyInstance> {
     app.setErrorHandler(errorHandler);
 
     app.addHook('onRequest', async (request, reply) => {
+        logger.info(`${request.method} ${request.url} from ${request.ip}`);
         reply.header('Access-Control-Allow-Origin', '*');
         reply.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         reply.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');

@@ -22,10 +22,6 @@ class Database {
         this.pool.on('connection', () => {
             logger.info('Database connection established');
         });
-
-        this.pool.on('error', (err) => {
-            logger.error('Database pool error:', err);
-        });
     }
 
     public static getInstance(): Database {
