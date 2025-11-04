@@ -1,0 +1,2 @@
+Wellness Tracker is a cross-platform mobile fitness application built to help users log detailed workout sessions and track their long-term progress. Leveraging a .NET MAUI frontend for a native experience on any device, the app features powerful analytics and data visualization powered by a TypeScript and Fastify backend, enabling users to monitor their fitness journey and achieve their goals.
+
